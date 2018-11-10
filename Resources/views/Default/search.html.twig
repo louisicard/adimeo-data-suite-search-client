@@ -162,7 +162,7 @@
             <ul>
                 {% for result in context.results %}
                     <li data-mapping-name="{{ mapping }}" data-record-id="{{ result._id }}">
-                        {% include "CtSearchClientBundle:Default:result-item.html.twig" %}
+                        {% include "@AdimeoDataSuiteSearchClient/Default/result-item.html.twig" %}
                         <div class="source">
                             {{ result|json_encode() }}
                         </div>
