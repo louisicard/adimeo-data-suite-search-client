@@ -2,7 +2,7 @@
 	"name": "adimeo-data-suite/search-client",
   "type": "symfony-bundle",
   "autoload": {
-    "psr-4": { "AdimeoDataSuite\\Bundle\\SearchClientBundle\\": "" }
+    "psr-4": { "AdimeoDataSuite\\SearchClientBundle\\": "" }
   },
   "require": {
     "symfony/framework-bundle": "*",
