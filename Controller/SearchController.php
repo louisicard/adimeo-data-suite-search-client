@@ -139,7 +139,7 @@ class SearchController extends Controller
       }
     }
 
-    return $this->render('@AdimeoDataSuiteSearchClientBundle/Default/search.html.twig', array(
+    return $this->render('@AdimeoDataSuiteSearchClient/Default/search.html.twig', array(
       'facets' => $facets,
       'sortingOptions' => isset($sortingOptions) ? $sortingOptions : array(),
       'mapping' => $request->get('mapping'),
@@ -220,7 +220,7 @@ class SearchController extends Controller
     if($response->getStatusCode() == 200){
       $data = json_decode($response->getBody(), TRUE);
       foreach($data as $result){
-        $html .= '<div class="more-like-this-item">' . $this->renderView('@AdimeoDataSuiteSearchClientBundle/Default/result-item.html.twig', array(
+        $html .= '<div class="more-like-this-item">' . $this->renderView('@AdimeoDataSuiteSearchClient/Default/result-item.html.twig', array(
           'result' => $result,
           'searchParams' => $searchParams
         )) . '</div>';

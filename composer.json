@@ -6,8 +6,6 @@
   },
   "require": {
     "symfony/framework-bundle": "*",
-    "guzzlehttp/guzzle": "*",
-		"twig/twig": "^2.5",
-		"symfony/twig-bridge": "^4.1"
+    "guzzlehttp/guzzle": "*"
   }
 }
