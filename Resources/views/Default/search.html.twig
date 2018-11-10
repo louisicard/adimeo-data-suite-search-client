@@ -7,7 +7,7 @@
     <link href="{{asset('ctsearchclient/css/normalize.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('js/jquery-ui/jquery-ui.min.css')}}" />
     <script type="text/javascript">
-        var __searchclient_base_url = '{{path('ct_search_client_homepage')}}';
+        var __searchclient_base_url = '{{path('search_client_homepage')}}';
         var __base_url = '{{baseUrl}}';
         var __searchclient_service_url = '{{ serviceUrl|raw }}';
         var __searchclient_mapping = '{{ mapping }}';
@@ -137,7 +137,7 @@
         <div class="results-list">
             {% if context.didYouMean is not null and context.total < 5 %}
                 <div class="did-you-mean">Did you mean <em><a
-                                href="{{ path('ct_search_client_homepage', {mapping: mapping, sp_id: searchPageId, query: context.didYouMean}) }}">{{ context.didYouMean }}</a></em>?
+                                href="{{ path('search_client_homepage', {mapping: mapping, sp_id: searchPageId, query: context.didYouMean}) }}">{{ context.didYouMean }}</a></em>?
                 </div>
             {% endif %}
             {% if context.autopromote is defined and context.autopromote|length > 0 %}
@@ -168,7 +168,7 @@
                         </div>
                         {% if searchParams.more_like_this is defined and searchParams.more_like_this|length > 0 %}
                             <div class="more-like-this">
-                                <a href="{{ path('ct_search_client_mlt', {mapping: mapping, sp_id: searchPageId, doc_id: result._id, fields: searchParams.more_like_this|join(',')}) }}"
+                                <a href="{{ path('search_client_mlt', {mapping: mapping, sp_id: searchPageId, doc_id: result._id, fields: searchParams.more_like_this|join(',')}) }}"
                                    class="ajax-link">See more like this</a>
                             </div>
                         {% endif %}
