@@ -179,9 +179,6 @@ class SearchContext
         }
       }
     }
-
-    $params['apply_boosting'] = 1;
-    $params['autopromote'] = 1;
   }
 
   /**
@@ -248,6 +245,8 @@ class SearchContext
         $this->ids = $params['ids'];
     }
 
+    $params['apply_boosting'] = 1;
+    $params['autopromote'] = 1;
 
     $url = $this->generateUrl($this->serviceUrl, $params);
     $this->currentRequestUrl = $url;
