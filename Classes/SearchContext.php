@@ -265,8 +265,8 @@ class SearchContext
     if (isset($response['aggregations'])) {
       $this->facets = $response['aggregations'];
     }
-    if (isset($response['autopromote']) && isset($response['autopromote']['hits']['hits'])) {
-      $this->autopromote = $response['autopromote']['hits']['hits'];
+    if (isset($response['autopromote'])) {
+      $this->autopromote = $response['autopromote'];
     }
 
     if(isset($response['suggest_ctsearch']) && count($response['suggest_ctsearch']) > 0){

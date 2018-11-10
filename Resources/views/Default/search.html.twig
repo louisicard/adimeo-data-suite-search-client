@@ -144,15 +144,15 @@
         <div class="autopromote-list">
           {% for autopromote in context.autopromote %}
             <div class="autopromote-item">
-              {% if autopromote._source.ctsap__image is not null and autopromote._source.ctsap__image is not empty %}
+              {% if autopromote.image is not null and autopromote.image is not empty %}
                 <div class="image">
-                  <img src="{{ autopromote._source.ctsap__image }}" />
+                  <img src="{{ autopromote.image }}" />
                 </div>
               {% endif %}
               <div class="info">
-                <h3><a href="{{ autopromote._source.ctsap__url }}" target="_blank">{{ autopromote._source.ctsap__title }}</a></h3>
+                <h3><a href="{{ autopromote.url }}" target="_blank">{{ autopromote.title }}</a></h3>
                 <div class="description">
-                  {{ autopromote._source.ctsap__body|raw }}
+                  {{ autopromote.body|raw }}
                 </div>
               </div>
             </div>
