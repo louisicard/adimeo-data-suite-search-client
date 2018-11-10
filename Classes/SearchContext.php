@@ -179,6 +179,9 @@ class SearchContext
         }
       }
     }
+
+    $params['apply_boosting'] = 1;
+    $params['autopromote'] = 1;
   }
 
   /**
