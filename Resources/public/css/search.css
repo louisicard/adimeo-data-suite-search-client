@@ -112,6 +112,7 @@ main{
 .sorting .sorting-content,
 .facets .facet-block {
   background:#fff;
+  word-break: break-all;
 }
 .results ul,
 .results li
