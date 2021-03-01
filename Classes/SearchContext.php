@@ -247,6 +247,10 @@ class SearchContext
 
     $params['apply_boosting'] = 1;
     $params['autopromote'] = 1;
+    if(strpos($this->query, '?') === 0) {
+      $params['escapeQuery'] = '0';
+      $params['query'] = substr($this->query, 1);
+    }
 
     $url = $this->generateUrl($this->serviceUrl, $params);
     $this->currentRequestUrl = $url;

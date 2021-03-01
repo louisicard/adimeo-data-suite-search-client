@@ -75,6 +75,7 @@ class SearchController extends Controller
       $context->setSort($searchParams['sorting']['default']['field'] . ',' . $searchParams['sorting']['default']['order']);
     }
 
+
     $context->execute();
     //dump($context);
 
@@ -221,9 +222,9 @@ class SearchController extends Controller
       $data = json_decode($response->getBody(), TRUE);
       foreach($data as $result){
         $html .= '<div class="more-like-this-item">' . $this->renderView('@AdimeoDataSuiteSearchClient/Default/result-item.html.twig', array(
-          'result' => $result,
-          'searchParams' => $searchParams
-        )) . '</div>';
+            'result' => $result,
+            'searchParams' => $searchParams
+          )) . '</div>';
       }
     }
     return new Response($html, 200, array('Content-type' => 'text/html; charset=utf-8'));
