@@ -52,6 +52,11 @@ class SearchContext
   private $size = 10;
 
   /**
+   * @var string
+   */
+  private $searchFields = null;
+
+  /**
    * @var int
    */
   private $from = 0;
@@ -228,6 +233,8 @@ class SearchContext
         }
       }
       $params['size'] = $this->size;
+      if($this->searchFields != null && $this->searchFields != '')
+        $params['search_fields'] = $this->searchFields;
       $params['from'] = $this->from;
       $params['sort'] = $this->sort;
       if ($this->highlights != null) {
@@ -237,6 +244,8 @@ class SearchContext
     else{
       if(isset($params['size']))
         $this->size = $params['size'];
+      if(isset($params['search_fields']) && $params['search_fields'] != null && $params['search_fields'] != '')
+        $this->searchFields = $params['search_fields'];
       if(isset($params['from']))
         $this->from = $params['from'];
       if(isset($params['sort']))
@@ -663,5 +672,23 @@ class SearchContext
 
     return $url . '?' . $qs;
   }
+
+  /**
+   * @return string
+   */
+  public function getSearchFields(): ?string
+  {
+    return $this->searchFields;
+  }
+
+  /**
+   * @param string $searchFields
+   */
+  public function setSearchFields(?string $searchFields): void
+  {
+    $this->searchFields = $searchFields;
+  }
+
+
 
 }

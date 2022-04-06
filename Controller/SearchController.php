@@ -53,6 +53,9 @@ class SearchController extends Controller
 
     $context = new SearchContext($request, $serviceUrl, $request->get('mapping'), implode(',', $facet_list), $searchParams['analyzer'], isset($searchParams['suggest']) ? implode(',', $searchParams['suggest']) : '', $highlight, implode(',', $sticky_facets));
     $context->setSize($searchParams['size']);
+    if(isset($searchParams['searchFields'])) {
+      $context->setSearchFields($searchParams['searchFields']);
+    }
 
     foreach($searchParams['facets'] as $facet) {
       if(isset($facet[array_keys($facet)[0]]['isDate']) && $facet[array_keys($facet)[0]]['isDate']) {
