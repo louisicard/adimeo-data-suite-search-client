@@ -244,8 +244,10 @@ a.ajax-link.ajax-loading{
   max-width:120px;
 }
 .results-list .autopromote-list .autopromote-item .image img{
-  max-width:100%;
+  max-width:120px;
+  max-height: 120px;
   height:auto;
+  width: auto;
   display:block;
 }
 .results-list .autopromote-list .autopromote-item {
